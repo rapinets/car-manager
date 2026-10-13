@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Форма автомобіля</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/app.js" defer></script>
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="container page-header__inner">
+        <h1 class="page-title">Форма</h1>
+        <nav class="page-nav" aria-label="Основна навігація">
+          <a href="./index.html">Головна</a>
+          <a href="./catalog.html">Каталог</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container page-shell">
+      <section class="content-card">
+        <h1 id="form-title">Додати автомобіль</h1>
+
+        <form id="car-form" class="car-form" novalidate>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="number">Номер</label>
+              <input id="number" name="number" type="text" maxlength="8" />
+              <span class="field-error" data-error-for="number"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="car_make_model">Марка і модель</label>
+              <input id="car_make_model" name="car_make_model" type="text" maxlength="200" />
+              <span class="field-error" data-error-for="car_make_model"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="is_available">Доступність</label>
+              <select id="is_available" name="is_available">
+                <option value="true">Доступна</option>
+                <option value="false">Недоступна</option>
+              </select>
+              <span class="field-error" data-error-for="is_available"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="automaker">Автопроизводитель</label>
+              <input id="automaker" name="automaker" type="text" maxlength="200" />
+              <span class="field-error" data-error-for="automaker"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="vin">VIN</label>
+              <input id="vin" name="vin" type="text" maxlength="17" />
+              <span class="field-error" data-error-for="vin"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="body">Кузов</label>
+              <select id="body" name="body">
+                <option value="">Оберіть кузов</option>
+                <option value="sedan">Седан</option>
+                <option value="hatchback">Хетчбек</option>
+                <option value="station_wagon">Універсал</option>
+                <option value="coupe">Купе</option>
+                <option value="cabriolet">Кабріолет</option>
+                <option value="crossover">Кросовер</option>
+                <option value="SUV">Позашляховик</option>
+                <option value="minivan">Мінівен</option>
+                <option value="pickup_truck">Пікап</option>
+              </select>
+              <span class="field-error" data-error-for="body"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="fuel_type">Паливо</label>
+              <select id="fuel_type" name="fuel_type">
+                <option value="">Оберіть паливо</option>
+                <option value="gasoline">Бензин</option>
+                <option value="diesel">Дизель</option>
+                <option value="gas">Газ</option>
+                <option value="electric">Електро</option>
+              </select>
+              <span class="field-error" data-error-for="fuel_type"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="price">Ціна</label>
+              <input id="price" name="price" type="number" min="0" step="0.01" />
+              <span class="field-error" data-error-for="price"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="rating">Рейтинг</label>
+              <input id="rating" name="rating" type="number" min="0" max="5" step="0.1" />
+              <span class="field-error" data-error-for="rating"></span>
+            </div>
+
+            <div class="form-field">
+              <label for="year">Рік</label>
+              <input id="year" name="year" type="number" min="1900" max="2026" />
+              <span class="field-error" data-error-for="year"></span>
+            </div>
+
+            <div class="form-field form-field--full">
+              <label for="summary">Опис</label>
+              <textarea id="summary" name="summary" rows="4" maxlength="2000"></textarea>
+              <span class="field-error" data-error-for="summary"></span>
+            </div>
+
+            <div class="form-field form-field--full">
+              <label for="additional_options">Додаткові опції</label>
+              <input id="additional_options" name="additional_options" type="text" placeholder="ABS, кондиціонер, ..." />
+              <span class="field-error" data-error-for="additional_options"></span>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="primary-button">Зберегти</button>
+            <a class="secondary-button" href="./catalog.html">Скасувати</a>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

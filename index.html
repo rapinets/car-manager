@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Catalog</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/app.js" defer></script>
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="container page-header__inner">
+        <h1 class="page-title">Car Catalog</h1>
+        <nav class="page-nav" aria-label="Основна навігація">
+          <a href="./index.html">Головна</a>
+          <a href="./catalog.html">Каталог</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container page-shell">
+      <section class="content-card">
+        <h2>Останні додані</h2>
+
+        <div id="loading-state" class="loading-state" aria-live="polite">
+          <span class="loader" aria-label="Loading"></span>
+          <span class="loading-state__text">Завантаження автомобілів...</span>
+        </div>
+
+        <div id="latest-list" class="car-grid" aria-live="polite"></div>
+      </section>
+    </main>
+  </body>
+</html>

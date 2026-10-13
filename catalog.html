@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Каталог</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/app.js" defer></script>
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="container page-header__inner">
+        <h1 class="page-title">Каталог</h1>
+        <nav class="page-nav" aria-label="Основна навігація">
+          <a href="./index.html">Головна</a>
+          <a href="./catalog.html">Каталог</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container page-shell">
+      <section class="content-card">
+        <div class="catalog-toolbar">
+          <h1>Каталог автомобілів</h1>
+          <button type="button" id="add-car-button" class="primary-button add-car-button">Додати авто</button>
+        </div>
+
+        <form id="catalog-filters" class="filter-panel" aria-label="Фільтри автомобілів">
+          <div class="filter-field">
+            <label for="filter-make-model">Марка і модель</label>
+            <input id="filter-make-model" name="car_make_model" type="text" placeholder="Наприклад: BMW" />
+          </div>
+
+          <div class="filter-field">
+            <label for="filter-fuel-type">Паливо</label>
+            <select id="filter-fuel-type" name="fuel_type">
+              <option value="">Усі</option>
+              <option value="gasoline">Бензин</option>
+              <option value="diesel">Дизель</option>
+              <option value="gas">Газ</option>
+              <option value="electric">Електро</option>
+            </select>
+          </div>
+
+          <div class="filter-field">
+            <label for="filter-year">Рік випуску</label>
+            <input id="filter-year" name="year" type="number" min="1900" max="2100" placeholder="Наприклад: 2021" />
+          </div>
+
+          <button type="submit" class="primary-button">Застосувати</button>
+        </form>
+
+        <div id="loading-state" class="loading-state" aria-live="polite">
+          <span class="loader" aria-label="Loading"></span>
+          <span class="loading-state__text">Завантаження автомобілів...</span>
+        </div>
+
+        <div id="catalog-list" class="car-grid" aria-live="polite"></div>
+
+        <div id="pagination" class="pagination" aria-label="Пагінація">
+          <button type="button" id="prev-page" class="pagination-button">Назад</button>
+          <span id="offset-value">Offset: 0</span>
+          <button type="button" id="next-page" class="pagination-button">Далі</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
